@@ -1,8 +1,5 @@
 # qb-advertisements
-Simple NUI advertising system for jobs with customisable prices!
-
-JMGarciaYT showcase
-- https://streamable.com/q3rcyj
+Simple command based public announcement system using qb-phone (sending emails to everyone)
 
 **Default Commands**
 - /adlspd
@@ -11,7 +8,7 @@ JMGarciaYT showcase
 - /adtaxi
 
 # Credits
-[JmGarciaYT](https://github.com/JmGarciaYT) for creating the intial script, I've simply converted it to QB and English
+[JmGarciaYT](https://github.com/JmGarciaYT) for creating the intial script, I've simply converted it to QB, made it English language and also intergrated it with qb-phone instead of an NUI.
 
 # Contact Me
 [NoobySloth Discord](https://discord.gg/hD2DeRm)

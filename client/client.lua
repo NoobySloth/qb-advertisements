@@ -1,13 +1,17 @@
-RegisterNetEvent('qb-announce:client:SendAlert')
-AddEventHandler('qb-announce:client:SendAlert', function(data)
-	SendAlert(data.type, data.text, data.length, data.style)
-end)
+local QBCore = exports['qb-core']:GetCoreObject()
 
-function SendAlert(type, text, length, style)
-	SendNUIMessage({
-		type = type,
-		text = text,
-		length = length,
-		style = style
-	})
-end
+RegisterNetEvent('qb-advertisement:SendEmail', function(job, msg)
+    SetTimeout(math.random(2500, 4000), function()
+        local gender = Lang:t('info.mr')
+        if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then
+            gender = Lang:t('info.mrs')
+        end
+        local charinfo = QBCore.Functions.GetPlayerData().charinfo
+        TriggerServerEvent('qb-phone:server:sendNewMail', {
+			sender = Lang:t('mail.sender'), {senderjob = job},
+			subject = Lang:t('mail.subject'),
+			message = Lang:t('mail.message', {gender = gender, lastname = charinfo.lastname, announcement = msg}),
+			button = {}
+		})
+    end)
+end)
