@@ -8,7 +8,7 @@ RegisterNetEvent('qb-advertisement:SendEmail', function(job, msg)
         end
         local charinfo = QBCore.Functions.GetPlayerData().charinfo
         TriggerServerEvent('qb-phone:server:sendNewMail', {
-			sender = Lang:t('mail.sender'), {job = senderjob},
+			sender = job,
 			subject = Lang:t('mail.subject'),
 			message = Lang:t('mail.message', {gender = gender, lastname = charinfo.lastname, announcement = msg}),
 			button = {}
