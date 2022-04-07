@@ -9,6 +9,7 @@ QBCore.Commands.Add('adlspd', 'LSPD Announcement', {{name = 'msg', help = 'Enter
 			local job = Lang:t('job.police')
 			Player.Functions.RemoveMoney("bank", Config.PoliceCost, "Police Advertisement")
 			TriggerClientEvent('qb-advertisement:SendEmail', -1, job, msg)
+			TriggerClientEvent('QBCore:Notify', source, 'Your public announcement cost $' .. Config.PoliceCost, "success")
 		else
 			TriggerClientEvent('QBCore:Notify', source, 'You do not have enough money for this', "error")
 		end
@@ -26,6 +27,7 @@ QBCore.Commands.Add('adems', 'EMS Announcement', {{name = 'msg', help = 'Enter y
 			local job = Lang:t('job.ems')
 			Player.Functions.RemoveMoney("bank", Config.EmsCost, "EMS Advertisement")
 			TriggerClientEvent('qb-advertisement:SendEmail', -1, job, msg)
+			TriggerClientEvent('QBCore:Notify', source, 'Your public announcement cost $' .. Config.EmsCost, "success")
 		else
 			TriggerClientEvent('QBCore:Notify', source, 'You do not have enough money for this', "error")
 		end
@@ -43,6 +45,7 @@ QBCore.Commands.Add('admechanic', 'Mechanic Announcement', {{name = 'msg', help 
 			local job = Lang:t('job.mechanic')
 			Player.Functions.RemoveMoney("bank", Config.MechanicCost, "Mechanic Advertisement")
 			TriggerClientEvent('qb-advertisement:SendEmail', -1, job, msg)
+			TriggerClientEvent('QBCore:Notify', source, 'Your public announcement cost $' .. Config.MechanicCost, "success")
 		else
 			TriggerClientEvent('QBCore:Notify', source, 'You do not have enough money for this', "error")
 		end
@@ -60,6 +63,7 @@ QBCore.Commands.Add('adtaxi', 'Taxi Announcement', {{name = 'msg', help = 'Enter
 			local job = Lang:t('job.taxi')
 			Player.Functions.RemoveMoney("bank", Config.TaxiCost, "Taxi Advertisement")
 			TriggerClientEvent('qb-advertisement:SendEmail', -1, job, msg)
+			TriggerClientEvent('QBCore:Notify', source, 'Your public announcement cost $' .. Config.TaxiCost, "success")
 		else
 			TriggerClientEvent('QBCore:Notify', source, 'You do not have enough money for this', "error")
 		end
